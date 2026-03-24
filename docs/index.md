@@ -68,5 +68,5 @@ Every finding comes with:
 
 - [Discord](https://discord.gg/fg6JS7Xz) — questions, feedback, release notes
 - [X / Twitter](https://x.com/revelionai) — announcements
-- [LinkedIn](https://www.linkedin.com/company/revelionai) — updates
+- [LinkedIn](https://www.linkedin.com/company/revelion-ai) — updates
 - [GitHub](https://github.com/RevelionAI) — open components and the daemon

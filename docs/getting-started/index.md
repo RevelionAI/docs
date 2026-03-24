@@ -35,4 +35,4 @@ With the daemon connected, you can create a mission from the dashboard. Point Re
 ---
 
 !!! tip "Daemon shows as online before you start"
-    Once the daemon authenticates, its status appears on the Daemons page in real-time. You do not need to do anything further — Revelion will route work to it automatically when a scan starts.
+    Once the daemon authenticates, its status appears on the [Daemons](https://app.revelion.ai/agents) page in real-time. You do not need to do anything further — Revelion will route work to it automatically when a scan starts.
