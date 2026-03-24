@@ -1,7 +1,10 @@
 /* ============================================
-   REVELION DOCS — Custom Theme
-   Dark tactical aesthetic matching app.revelion.ai
+   REVELION DOCS — Tactical Dark Theme
+   Matches app.revelion.ai aesthetic
    ============================================ */
+
+/* --- Oxanium (Revelion brand font) for headings --- */
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700;800&display=swap');
 
 /* --- Core palette --- */
 :root {
@@ -9,18 +12,20 @@
   --md-primary-fg-color--light: #12151C;
   --md-primary-fg-color--dark: #080a0d;
   --md-accent-fg-color: #B11226;
-  --md-accent-fg-color--transparent: rgba(177, 18, 38, 0.12);
   --rvl-red: #B11226;
+  --rvl-red-glow: rgba(177, 18, 38, 0.15);
   --rvl-red-hover: #d41b32;
   --rvl-bg: #0B0D10;
   --rvl-surface: #12151C;
+  --rvl-surface-hover: #161a24;
   --rvl-border: rgba(148, 163, 184, 0.08);
+  --rvl-border-hover: rgba(148, 163, 184, 0.15);
   --rvl-text: #e2e8f0;
   --rvl-text-muted: #64748b;
   --rvl-text-dim: #475569;
 }
 
-/* --- Slate scheme (dark mode — primary) --- */
+/* --- Slate scheme --- */
 [data-md-color-scheme="slate"] {
   --md-default-bg-color: var(--rvl-bg);
   --md-default-fg-color: var(--rvl-text);
@@ -32,139 +37,228 @@
   --md-accent-fg-color: var(--rvl-red);
   --md-typeset-color: var(--rvl-text);
   --md-typeset-a-color: var(--rvl-red);
-  --md-code-bg-color: #0f1117;
+  --md-code-bg-color: #0a0c0f;
   --md-code-fg-color: #e2e8f0;
-  --md-code-hl-color: rgba(177, 18, 38, 0.15);
+  --md-code-hl-color: var(--rvl-red-glow);
   --md-footer-bg-color: #060709;
   --md-footer-bg-color--dark: #040506;
 }
 
-/* --- Header --- */
+/* ============================================
+   HEADER — Subtle red glow underneath
+   ============================================ */
 .md-header {
   background: var(--rvl-bg);
   border-bottom: 1px solid var(--rvl-border);
-  box-shadow: none;
+  box-shadow: 0 1px 20px rgba(177, 18, 38, 0.04);
 }
 
 .md-header__title {
+  font-family: 'Oxanium', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
-/* --- Tabs --- */
+.md-header__topic {
+  font-family: 'Oxanium', sans-serif;
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5), 0 1px 10px rgba(177, 18, 38, 0.06);
+}
+
+/* ============================================
+   TABS — Uppercase tactical with red active
+   ============================================ */
 .md-tabs {
   background: var(--rvl-bg);
   border-bottom: 1px solid var(--rvl-border);
 }
 
 .md-tabs__link {
-  font-size: 0.72rem;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.5;
-  transition: all 0.15s ease;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+  transition: all 0.2s ease;
 }
 
-.md-tabs__link:hover,
+.md-tabs__link:hover {
+  opacity: 0.8;
+}
+
 .md-tabs__link--active {
   opacity: 1;
+  color: var(--rvl-red) !important;
 }
 
-.md-tabs__link--active {
-  border-bottom: 2px solid var(--rvl-red);
-}
-
-/* --- Navigation sidebar --- */
+/* ============================================
+   NAVIGATION SIDEBAR
+   ============================================ */
 [data-md-color-scheme="slate"] .md-sidebar {
   background: var(--rvl-bg);
 }
 
 [data-md-color-scheme="slate"] .md-nav__link {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--rvl-text-muted);
-  transition: color 0.15s ease;
+  transition: all 0.15s ease;
+  border-left: 2px solid transparent;
+  padding-left: 0.6em;
 }
 
 [data-md-color-scheme="slate"] .md-nav__link:hover {
   color: var(--rvl-text);
+  border-left-color: rgba(177, 18, 38, 0.3);
 }
 
-[data-md-color-scheme="slate"] .md-nav__link--active {
-  color: var(--rvl-red);
-  font-weight: 600;
-}
-
+[data-md-color-scheme="slate"] .md-nav__link--active,
 [data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link {
   color: var(--rvl-red);
+  font-weight: 600;
+  border-left-color: var(--rvl-red);
 }
 
-/* --- Content typography --- */
+/* Section labels */
+.md-nav__item--nested > .md-nav__link {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rvl-text-dim) !important;
+}
+
+/* ============================================
+   CONTENT TYPOGRAPHY
+   ============================================ */
 .md-typeset {
-  font-size: 0.85rem;
-  line-height: 1.7;
+  font-size: 0.84rem;
+  line-height: 1.75;
   color: var(--rvl-text);
 }
 
 .md-typeset h1 {
+  font-family: 'Oxanium', sans-serif;
   font-weight: 800;
+  font-size: 2rem;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 0.8em;
-  border-bottom: 2px solid var(--rvl-red);
-  padding-bottom: 0.4em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.5em;
+  border-bottom: none;
+  position: relative;
+}
+
+/* Animated gradient underline on H1 */
+.md-typeset h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rvl-red), rgba(177, 18, 38, 0.3), transparent);
 }
 
 .md-typeset h2 {
+  font-family: 'Oxanium', sans-serif;
   font-weight: 700;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
   color: #ffffff;
-  margin-top: 2em;
+  margin-top: 2.5em;
+  padding-top: 1em;
+  border-top: 1px solid var(--rvl-border);
+}
+
+.md-typeset h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
 }
 
 .md-typeset h3 {
+  font-family: 'Oxanium', sans-serif;
   font-weight: 600;
+  font-size: 1.05rem;
   color: #f1f5f9;
 }
 
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
+  font-family: 'Oxanium', sans-serif;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #94a3b8;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
 }
 
-/* --- Links --- */
+/* --- Paragraphs --- */
+.md-typeset p {
+  color: #cbd5e1;
+}
+
+/* --- Strong text --- */
+.md-typeset strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ============================================
+   LINKS — Red with hover transition
+   ============================================ */
 .md-typeset a {
   color: var(--rvl-red);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
   transition: all 0.15s ease;
 }
 
 .md-typeset a:hover {
   color: var(--rvl-red-hover);
-  border-bottom-color: var(--rvl-red-hover);
+  text-shadow: 0 0 20px rgba(177, 18, 38, 0.2);
 }
 
-/* --- Code blocks --- */
+/* ============================================
+   CODE — Terminal aesthetic
+   ============================================ */
 [data-md-color-scheme="slate"] .md-typeset code {
-  background: #0f1117;
+  background: #0a0c0f;
   border: 1px solid var(--rvl-border);
   color: #e2e8f0;
   font-size: 0.82em;
-  padding: 0.15em 0.4em;
+  padding: 0.15em 0.45em;
   border-radius: 0;
 }
 
 [data-md-color-scheme="slate"] .md-typeset pre {
-  background: #0a0c0f;
+  background: #080a0d;
   border: 1px solid var(--rvl-border);
   border-left: 3px solid var(--rvl-red);
   border-radius: 0;
+  position: relative;
+}
+
+/* Terminal-style label on code blocks */
+[data-md-color-scheme="slate"] .md-typeset pre::before {
+  content: 'terminal';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--rvl-red-glow);
+  color: var(--rvl-text-dim);
+  font-family: 'Oxanium', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.2em 0.8em;
+  border-bottom-left-radius: 0;
 }
 
 [data-md-color-scheme="slate"] .md-typeset pre > code {
@@ -173,36 +267,48 @@
   padding: 0;
 }
 
-/* --- Tables --- */
+/* ============================================
+   TABLES — Dark card style with red headers
+   ============================================ */
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) {
   background: var(--rvl-surface);
   border: 1px solid var(--rvl-border);
   border-radius: 0;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  overflow: hidden;
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
   background: rgba(177, 18, 38, 0.06);
-  border-bottom: 2px solid rgba(177, 18, 38, 0.2);
+  border-bottom: 1px solid rgba(177, 18, 38, 0.15);
   color: #ffffff;
+  font-family: 'Oxanium', sans-serif;
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.8em 1em;
+  letter-spacing: 0.08em;
+  padding: 0.9em 1em;
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
   border-bottom: 1px solid var(--rvl-border);
-  padding: 0.7em 1em;
+  padding: 0.75em 1em;
   color: #cbd5e1;
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.015);
 }
 
-/* --- Admonitions --- */
+/* Checkmark styling in tables */
+.md-typeset table td:has(✓),
+.md-typeset table td strong {
+  color: #ffffff;
+}
+
+/* ============================================
+   ADMONITIONS — Sharp edges, left accent bar
+   ============================================ */
 [data-md-color-scheme="slate"] .md-typeset .admonition,
 [data-md-color-scheme="slate"] .md-typeset details {
   background: var(--rvl-surface);
@@ -210,54 +316,50 @@
   border-left: 3px solid;
   border-radius: 0;
   box-shadow: none;
+  overflow: hidden;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .admonition-title,
 [data-md-color-scheme="slate"] .md-typeset summary {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.015);
   border-bottom: 1px solid var(--rvl-border);
+  font-family: 'Oxanium', sans-serif;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
-/* Tip — emerald accent */
-.md-typeset .admonition.tip,
-.md-typeset details.tip {
-  border-left-color: #10b981;
-}
+.md-typeset .admonition.tip { border-left-color: #10b981; }
+.md-typeset .admonition.warning { border-left-color: #f59e0b; }
+.md-typeset .admonition.info, .md-typeset .admonition.note { border-left-color: #3b82f6; }
+.md-typeset .admonition.danger, .md-typeset .admonition.bug { border-left-color: var(--rvl-red); }
+.md-typeset details.tip { border-left-color: #10b981; }
+.md-typeset details.warning { border-left-color: #f59e0b; }
+.md-typeset details.info, .md-typeset details.note { border-left-color: #3b82f6; }
 
-/* Warning — amber accent */
-.md-typeset .admonition.warning,
-.md-typeset details.warning {
-  border-left-color: #f59e0b;
-}
-
-/* Info — blue accent */
-.md-typeset .admonition.info,
-.md-typeset details.info {
-  border-left-color: #3b82f6;
-}
-
-/* Danger — red accent */
-.md-typeset .admonition.danger,
-.md-typeset details.danger {
-  border-left-color: var(--rvl-red);
-}
-
-/* --- Search --- */
+/* ============================================
+   SEARCH
+   ============================================ */
 [data-md-color-scheme="slate"] .md-search__input {
   background: var(--rvl-surface);
   border: 1px solid var(--rvl-border);
+  border-radius: 0;
   color: var(--rvl-text);
+}
+
+[data-md-color-scheme="slate"] .md-search__input:focus {
+  border-color: rgba(177, 18, 38, 0.3);
+  box-shadow: 0 0 0 3px rgba(177, 18, 38, 0.08);
 }
 
 [data-md-color-scheme="slate"] .md-search__input::placeholder {
   color: var(--rvl-text-dim);
 }
 
-/* --- Footer --- */
+/* ============================================
+   FOOTER
+   ============================================ */
 .md-footer {
   background: #060709;
   border-top: 1px solid var(--rvl-border);
@@ -267,21 +369,30 @@
   background: #040506;
 }
 
-/* --- Content area max width --- */
-.md-content {
-  max-width: 52rem;
+.md-footer-nav__link {
+  transition: all 0.15s ease;
 }
 
-/* --- Horizontal rules --- */
+.md-footer-nav__link:hover {
+  opacity: 0.8;
+}
+
+/* ============================================
+   HORIZONTAL RULES — Subtle gradient
+   ============================================ */
 [data-md-color-scheme="slate"] .md-typeset hr {
-  border-color: var(--rvl-border);
-  margin: 2em 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rvl-border), rgba(177, 18, 38, 0.08), var(--rvl-border));
+  margin: 2.5em 0;
 }
 
-/* --- Scrollbar --- */
+/* ============================================
+   SCROLLBARS
+   ============================================ */
 [data-md-color-scheme="slate"] ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 [data-md-color-scheme="slate"] ::-webkit-scrollbar-track {
@@ -290,41 +401,61 @@
 
 [data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 0;
 }
 
 [data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--rvl-red);
 }
 
-/* --- Selection highlight --- */
+/* ============================================
+   SELECTION
+   ============================================ */
 ::selection {
   background: rgba(177, 18, 38, 0.3);
   color: #ffffff;
 }
 
-/* --- TOC (right sidebar) --- */
+/* ============================================
+   TOC (right sidebar)
+   ============================================ */
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--rvl-text-dim);
+  border-left: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link:hover {
+  color: var(--rvl-text-muted);
 }
 
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--active {
   color: var(--rvl-red);
+  border-left-color: var(--rvl-red);
 }
 
-/* --- Back-to-top button --- */
+/* ============================================
+   BACK TO TOP
+   ============================================ */
 .md-top {
   background: var(--rvl-red);
   color: #ffffff;
   border-radius: 0;
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
 }
 
 .md-top:hover {
   background: var(--rvl-red-hover);
+  box-shadow: 0 0 20px rgba(177, 18, 38, 0.3);
 }
 
-/* --- Copy code button --- */
+/* ============================================
+   COPY BUTTON
+   ============================================ */
 [data-md-color-scheme="slate"] .md-clipboard {
   color: var(--rvl-text-dim);
 }
@@ -333,31 +464,66 @@
   color: var(--rvl-red);
 }
 
-/* --- Tag/badge styling for inline code in headings --- */
+/* ============================================
+   CODE IN HEADINGS — Badge style
+   ============================================ */
 .md-typeset h1 code,
 .md-typeset h2 code,
 .md-typeset h3 code {
-  background: rgba(177, 18, 38, 0.1);
-  border: 1px solid rgba(177, 18, 38, 0.2);
+  background: var(--rvl-red-glow);
+  border: 1px solid rgba(177, 18, 38, 0.25);
   color: var(--rvl-red);
-  font-size: 0.75em;
+  font-size: 0.7em;
+  padding: 0.2em 0.5em;
 }
 
-/* --- Strong/bold in tables (for checkmarks) --- */
-.md-typeset table td strong {
-  color: #ffffff;
+/* ============================================
+   LISTS — Subtle markers
+   ============================================ */
+[data-md-color-scheme="slate"] .md-typeset ul > li::marker {
+  color: var(--rvl-red);
 }
 
-/* --- Light mode overrides (for toggle) --- */
+[data-md-color-scheme="slate"] .md-typeset ol > li::marker {
+  color: var(--rvl-red);
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 700;
+}
+
+/* ============================================
+   CONTENT TABS (if used)
+   ============================================ */
+.md-typeset .tabbed-labels > label {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.md-typeset .tabbed-labels > label--active {
+  color: var(--rvl-red);
+  border-color: var(--rvl-red);
+}
+
+/* ============================================
+   BACKGROUND TEXTURE — Subtle hex grid
+   ============================================ */
+[data-md-color-scheme="slate"] .md-main {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(177, 18, 38, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(177, 18, 38, 0.01) 0%, transparent 40%);
+}
+
+/* ============================================
+   LIGHT MODE (minimal — keep it functional)
+   ============================================ */
 [data-md-color-scheme="default"] {
   --md-primary-fg-color: #0B0D10;
   --md-accent-fg-color: var(--rvl-red);
 }
 
-[data-md-color-scheme="default"] .md-header {
-  background: #0B0D10;
-}
-
+[data-md-color-scheme="default"] .md-header,
 [data-md-color-scheme="default"] .md-tabs {
   background: #0B0D10;
 }

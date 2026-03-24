@@ -646,10 +646,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#macos-linux" class="md-nav__link">
+  <a href="#macos-linux-recommended-one-liner" class="md-nav__link">
     <span class="md-ellipsis">
       
-        macOS / Linux
+        macOS / Linux (recommended one-liner)
       
     </span>
   </a>
@@ -657,10 +657,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows-powershell" class="md-nav__link">
+  <a href="#windows-powershell-recommended-one-liner" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows (PowerShell)
+        Windows (PowerShell, recommended one-liner)
       
     </span>
   </a>
@@ -684,10 +684,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-happens-on-first-start" class="md-nav__link">
+  <a href="#what-the-install-script-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Happens on First Start
+        What the Install Script Does
       
     </span>
   </a>
@@ -1684,10 +1684,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#macos-linux" class="md-nav__link">
+  <a href="#macos-linux-recommended-one-liner" class="md-nav__link">
     <span class="md-ellipsis">
       
-        macOS / Linux
+        macOS / Linux (recommended one-liner)
       
     </span>
   </a>
@@ -1695,10 +1695,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#windows-powershell" class="md-nav__link">
+  <a href="#windows-powershell-recommended-one-liner" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Windows (PowerShell)
+        Windows (PowerShell, recommended one-liner)
       
     </span>
   </a>
@@ -1722,10 +1722,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-happens-on-first-start" class="md-nav__link">
+  <a href="#what-the-install-script-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Happens on First Start
+        What the Install Script Does
       
     </span>
   </a>
@@ -1764,13 +1764,13 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>The Revelion daemon is a single binary. Install it, authenticate it with your account token, and start it. The daemon handles everything else — image pulls, container lifecycle, tool execution.</p>
+<p>The Revelion daemon is a single binary. A one-liner installs it, authenticates with your account, and starts it automatically. The daemon handles everything else — image pulls, container lifecycle, tool execution.</p>
 <hr />
 <h2 id="1-sign-up-and-get-your-token">1. Sign Up and Get Your Token<a class="headerlink" href="#1-sign-up-and-get-your-token" title="Permanent link">&para;</a></h2>
 <p>Create an account at <a href="https://app.revelion.ai">app.revelion.ai</a> if you have not already.</p>
 <p>Once logged in:</p>
 <ol>
-<li>Navigate to <strong>Daemons</strong> in the sidebar.</li>
+<li>Navigate to <a href="https://app.revelion.ai/agents"><strong>Daemons</strong></a> in the sidebar.</li>
 <li>Click <strong>Add Daemon</strong>.</li>
 <li>Copy the authentication token shown — you will use it in the next step.</li>
 </ol>
@@ -1780,18 +1780,32 @@
 </div>
 <hr />
 <h2 id="2-install-the-daemon">2. Install the Daemon<a class="headerlink" href="#2-install-the-daemon" title="Permanent link">&para;</a></h2>
-<p>Choose the instructions for your operating system.</p>
-<h3 id="macos-linux">macOS / Linux<a class="headerlink" href="#macos-linux" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>revelion@ai<span class="w"> </span>$<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/RevelionAI/revelion-daemon/main/scripts/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>revelion@ai<span class="w"> </span>$<span class="w"> </span>revelion<span class="w"> </span>auth<span class="w"> </span>YOUR_TOKEN
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>revelion@ai<span class="w"> </span>$<span class="w"> </span>revelion<span class="w"> </span>start
+<p>The recommended approach is a single command that downloads the binary, authenticates, and starts the daemon in one step. Choose the instructions for your operating system.</p>
+<h3 id="macos-linux-recommended-one-liner">macOS / Linux (recommended one-liner)<a class="headerlink" href="#macos-linux-recommended-one-liner" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/RevelionAI/revelion-daemon/main/scripts/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>YOUR_API_TOKEN
 </code></pre></div>
+<p>That is it. The script downloads the correct binary for your platform and architecture (Linux/macOS, amd64/arm64), authenticates with your token, and starts the daemon automatically.</p>
+<details class="note">
+<summary>Manual steps (without token)</summary>
+<p>If you prefer to install first and authenticate later:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/RevelionAI/revelion-daemon/main/scripts/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>revelion<span class="w"> </span>auth<span class="w"> </span>YOUR_API_TOKEN
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>revelion<span class="w"> </span>start
+</code></pre></div>
+</details>
 <p>The install script places the <code>revelion</code> binary in <code>/usr/local/bin</code> (or <code>~/.local/bin</code> if you do not have sudo). It detects your architecture automatically (x86_64 and arm64 are both supported).</p>
-<h3 id="windows-powershell">Windows (PowerShell)<a class="headerlink" href="#windows-powershell" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">iwr </span><span class="n">-useb</span> <span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">RevelionAI</span><span class="p">/</span><span class="n">revelion-daemon</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">scripts</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">revelion</span> <span class="n">auth</span> <span class="n">YOUR_TOKEN</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">revelion</span> <span class="nb">start</span>
+<h3 id="windows-powershell-recommended-one-liner">Windows (PowerShell, recommended one-liner)<a class="headerlink" href="#windows-powershell-recommended-one-liner" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$env:REVELION_TOKEN</span><span class="p">=</span><span class="s1">&#39;YOUR_API_TOKEN&#39;</span><span class="p">;</span> <span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">RevelionAI</span><span class="p">/</span><span class="n">revelion-daemon</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">scripts</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
 </code></pre></div>
+<p>The token is passed via the <code>REVELION_TOKEN</code> environment variable. The script downloads the binary, authenticates, and starts the daemon automatically.</p>
+<details class="note">
+<summary>Manual steps (without token)</summary>
+<p>If you prefer to install first and authenticate later:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">RevelionAI</span><span class="p">/</span><span class="n">revelion-daemon</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">scripts</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">revelion</span> <span class="n">auth</span> <span class="n">YOUR_API_TOKEN</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">revelion</span> <span class="nb">start</span>
+</code></pre></div>
+</details>
 <p>The installer places the <code>revelion.exe</code> binary in <code>%LOCALAPPDATA%\Revelion\bin</code> and adds it to your <code>PATH</code>. Open a new PowerShell window after install if the command is not found.</p>
 <div class="admonition tip">
 <p class="admonition-title">Running as a service</p>
@@ -1799,18 +1813,26 @@
 </div>
 <hr />
 <h2 id="3-verify-the-connection">3. Verify the Connection<a class="headerlink" href="#3-verify-the-connection" title="Permanent link">&para;</a></h2>
-<p>After running <code>revelion start</code>, open the <strong>Daemons</strong> page in the dashboard. Your daemon's status should change to <strong>Online</strong> within a few seconds.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>revelion@ai $ revelion status
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>daemon: connected
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>platform: app.revelion.ai
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>sandbox: image ready
+<p>After the install script finishes, open the <a href="https://app.revelion.ai/agents"><strong>Daemons</strong></a> page in the dashboard. Your daemon's status should change to <strong>Online</strong> within a few seconds.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>revelion@ai $ revelion status
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>daemon: connected
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>platform: app.revelion.ai
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>sandbox: image ready
 </code></pre></div>
 <p>If the status does not update, check the <a href="../../platform/architecture/">Architecture</a> page for details on daemon connectivity, or contact support on <a href="https://discord.gg/fg6JS7Xz">Discord</a>.</p>
 <hr />
-<h2 id="what-happens-on-first-start">What Happens on First Start<a class="headerlink" href="#what-happens-on-first-start" title="Permanent link">&para;</a></h2>
-<p>When the daemon starts for the first time, it:</p>
+<h2 id="what-the-install-script-does">What the Install Script Does<a class="headerlink" href="#what-the-install-script-does" title="Permanent link">&para;</a></h2>
+<p>The install script:</p>
 <ol>
-<li>Authenticates with your token and registers itself under your account.</li>
+<li>Displays the Revelion ASCII art banner.</li>
+<li>Detects your platform and CPU architecture.</li>
+<li>Downloads the correct daemon binary from GitHub.</li>
+<li>Checks for Docker and warns if it is not found.</li>
+<li>If a token was provided: authenticates and starts the daemon automatically.</li>
+</ol>
+<p>On first start the daemon also:</p>
+<ol>
+<li>Registers itself under your account.</li>
 <li>Checks for the sandbox Docker image (<code>ghcr.io/revelionai/revelion-sandbox</code>).</li>
 <li>Pulls the image if it is not already present — this is a one-time download (~3–4 GB).</li>
 <li>Opens a persistent WebSocket connection to Revelion and waits for work.</li>
