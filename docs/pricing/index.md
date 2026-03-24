@@ -6,8 +6,8 @@ Revelion is priced around compute consumed, not headcount or engagement count. Y
 
 | | Free | Pro (£99/mo) | MSP (£299/mo) | Enterprise |
 |---|---|---|---|---|
-| Starting credits | 5,000 | 100,000/mo | 300,000/mo | Unlimited |
-| Top-up bonus | — | 25% | 33% | Custom |
+| Starting credits | 5,000 | 125,000/mo | 400,000/mo | Unlimited |
+| Top-up bonus | — | 25% | 33.3% | Custom |
 | Web & network testing | ✓ | ✓ | ✓ | ✓ |
 | VPN tunnelling | ✓ | ✓ | ✓ | ✓ |
 | HITL approvals | ✓ | ✓ | ✓ | ✓ |
@@ -40,7 +40,7 @@ Top-ups are available from £10 (10,000 credits). Pro and MSP subscribers receiv
 |---|---|
 | Free | — |
 | Pro | 25% extra credits per top-up |
-| MSP | 33% extra credits per top-up |
+| MSP | 33.3% extra credits per top-up |
 
 ## Compared to traditional pentesting
 

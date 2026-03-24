@@ -2,8 +2,8 @@
 
 VPN tunnelling lets Revelion test internal networks and hosts that are not publicly reachable. When a VPN config is attached to a mission, the sandbox container establishes the tunnel before any scanning begins — all tool traffic routes through it automatically.
 
-!!! tip "Pro Feature"
-    VPN tunnelling is available on **Pro** and **MSP** plans. Upgrade from the [Membership](../account/membership.md) page.
+!!! info "Available on all plans"
+    VPN tunnelling is available on all plans, including Free.
 
 ---
 
@@ -81,5 +81,5 @@ Enable keepalive settings in your VPN server config. For OpenVPN: `keepalive 10 
 ## Related
 
 - [Scope Configuration](scope-configuration.md)
-- [Running a Mission](../quickstart/first-mission.md)
-- [Membership & Plans](../account/membership.md)
+- [Running a Mission](../getting-started/first-mission.md)
+- [Membership & Plans](../pricing/index.md)

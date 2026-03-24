@@ -3,7 +3,7 @@
 Scheduled scans let you run Revelion automatically on a recurring basis without manual intervention. Use them to track your attack surface over time, catch regressions after deployments, or maintain continuous security coverage.
 
 !!! tip "Pro Feature"
-    Scheduled scans are available on **Pro** and **MSP** plans. Upgrade from the [Membership](../account/membership.md) page.
+    Scheduled scans are available on **Pro** and **MSP** plans. Upgrade from the [Membership](../pricing/index.md) page.
 
 ---
 
@@ -79,5 +79,4 @@ Scheduled scans consume credits from your organisation's balance the same way ma
 
 - [Scope Configuration](scope-configuration.md)
 - [VPN Tunnelling](vpn-tunnelling.md)
-- [Billing & Credits](../account/billing.md)
-- [Membership & Plans](../account/membership.md)
+- [Pricing & Credits](../pricing/index.md)

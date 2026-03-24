@@ -70,29 +70,29 @@ Patterns support `*` as a wildcard. Paths are matched against the full URL after
 Revelion offers three scan modes that control depth, duration, and the intensity of testing activity:
 
 ### Quick
-- Duration: ~10–20 minutes
+- Duration: ~15–30 minutes
 - Lightweight reconnaissance and passive analysis
 - Minimal active exploitation attempts
 - Suitable for rapid triage or CI/CD integration
 
 ### Standard
-- Duration: ~30–60 minutes
+- Duration: ~1–2 hours
 - Full reconnaissance, active vulnerability testing, and exploitation attempts
 - Balanced coverage without exhaustive brute-force
 
 ### Deep
-- Duration: ~2–4 hours
+- Duration: several hours (target-dependent)
 - Exhaustive testing across all discovered attack surface
 - Aggressive payload delivery, chained exploitation, and post-exploitation steps
 - Recommended for pre-release or compliance-driven assessments
 
 !!! info "Credit Usage"
-    Deeper scan modes consume significantly more credits. Check your credit balance before starting a Deep scan. See the [Billing](../account/billing.md) page for credit details.
+    Deeper scan modes consume significantly more credits. Check your credit balance before starting a Deep scan. See the [Pricing](../pricing/index.md) page for credit details.
 
 ---
 
 ## Related
 
-- [Running a Mission](../quickstart/first-mission.md)
+- [Running a Mission](../getting-started/first-mission.md)
 - [Scheduled Scans](scheduled-scans.md)
 - [VPN Tunnelling](vpn-tunnelling.md)

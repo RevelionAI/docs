@@ -76,7 +76,7 @@ Map findings to compliance requirements automatically:
 - NIST CSF
 - CIS Controls
 - OWASP Top 10
-- PTES
+- Cyber Essentials
 
 ---
 
@@ -104,4 +104,4 @@ Attach an OpenVPN or WireGuard config to a scan. The sandbox container establish
 
 Manage multiple clients under a single Revelion account. Each client has isolated findings, reports, and scan history. Per-client white-label branding lets you deliver reports under your own brand or the client's brand independently.
 
-See [MSP Management](../msp/overview.md) for setup.
+See [MSP Management](../for-msps/index.md) for setup.

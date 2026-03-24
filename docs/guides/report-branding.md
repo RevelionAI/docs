@@ -70,5 +70,5 @@ Branding is applied at the time a report is generated. Saving new branding setti
 ## Related
 
 - [Compliance Frameworks](compliance-frameworks.md)
-- [MSP Overview](../msp/overview.md)
-- [Membership & Plans](../account/membership.md)
+- [MSP Overview](../for-msps/index.md)
+- [Membership & Plans](../pricing/index.md)

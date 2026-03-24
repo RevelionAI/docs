@@ -56,11 +56,11 @@ Every finding comes with:
 ## Key Sections
 
 - [Getting Started](getting-started/index.md) — requirements, installation, first mission
-- [Scan Modes](scan-modes.md) — Quick, Standard, Deep
-- [Findings & Reports](reports.md) — CVSS scoring, PDF export, white-label
-- [Vulnerability Management](vuln-management.md) — asset tracking, deduplication, history
-- [MSP & Teams](msp.md) — multi-client workspaces, per-client branding
-- [Daemon](daemon.md) — architecture, configuration, troubleshooting
+- [Platform Overview](platform/overview.md) — what Revelion is and how it works
+- [Findings & Reports](platform/reports.md) — CVSS scoring, PDF export, white-label
+- [Features](platform/features.md) — scan modes, vuln management, compliance
+- [MSP & Teams](for-msps/index.md) — multi-client workspaces, per-client branding
+- [Architecture](platform/architecture.md) — brain, daemon, sandbox, data flow
 
 ---
 

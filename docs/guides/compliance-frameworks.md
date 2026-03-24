@@ -3,7 +3,7 @@
 Revelion can map findings directly to the controls of nine industry-recognised compliance frameworks. When a framework is selected during mission setup, every finding is tagged to the relevant control reference — and the generated PDF report includes a dedicated compliance mapping section.
 
 !!! tip "Pro Feature"
-    Compliance framework mapping is available on **Pro** and **MSP** plans. Upgrade from the [Membership](../account/membership.md) page.
+    Compliance framework mapping is available on **Pro** and **MSP** plans. Upgrade from the [Membership](../pricing/index.md) page.
 
 ---
 
@@ -61,4 +61,4 @@ A control marked as "no findings" means no technical vulnerability was detected 
 
 - [Scope Configuration](scope-configuration.md)
 - [Report Branding](report-branding.md)
-- [Membership & Plans](../account/membership.md)
+- [Membership & Plans](../pricing/index.md)

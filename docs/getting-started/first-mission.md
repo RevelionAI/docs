@@ -88,18 +88,18 @@ Every finding includes:
 **PDF Report**
 Revelion generates a full PDF report automatically on completion. Download it from the mission detail page or the Reports section. The PDF includes an executive summary, all findings with evidence, and appendices.
 
-For white-label PDF output (custom logo, colours, company name), configure branding in [Settings → Report Branding](../reports.md#white-label).
+For white-label PDF output (custom logo, colours, company name), configure branding in [Settings → Report Branding](../guides/report-branding.md).
 
 ---
 
 ## 5. Retesting
 
-After you remediate findings, create a new mission against the same target. Revelion tracks findings across missions — if a previously confirmed vulnerability no longer reproduces, it is marked as resolved in the [Vulnerability Management](../vuln-management.md) view.
+After you remediate findings, create a new mission against the same target. Revelion tracks findings across missions — if a previously confirmed vulnerability no longer reproduces, it is marked as resolved in the Vulnerability Management view.
 
 ---
 
 ## What's Next
 
-- [Scan Modes](../scan-modes.md) — deep dive on Quick, Standard, and Deep
-- [Findings & Reports](../reports.md) — PDF export, JSON export, white-label
-- [Vulnerability Management](../vuln-management.md) — asset tracking across missions
+- [How It Works](../platform/how-it-works.md) — phases of a Revelion engagement including scan modes
+- [Findings & Reports](../platform/reports.md) — PDF export, JSON export, white-label
+- [Features](../platform/features.md) — vulnerability management, compliance, and more

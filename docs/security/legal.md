@@ -3,7 +3,7 @@
 Revelion is a penetration testing tool. Like Nmap, Burp Suite, or Metasploit, it is the user's responsibility to ensure it is used lawfully. The platform provides no authorisation by itself — you must obtain explicit written permission before testing any system.
 
 !!! warning "Unauthorised access to computer systems is a criminal offence. Always obtain explicit written permission before testing."
-    In the UK, unauthorised access is an offence under the **Computer Misuse Act 1988**. In the EU and US, equivalent laws apply. Ignorance of authorisation requirements is not a defence.
+    In the UK, unauthorised access is an offence under the **Computer Misuse Act 1990**. In the EU and US, equivalent laws apply. Ignorance of authorisation requirements is not a defence.
 
 ## Your responsibilities
 

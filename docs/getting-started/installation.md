@@ -59,7 +59,7 @@ platform: app.revelion.ai
 sandbox: image ready
 ```
 
-If the status does not update, check [troubleshooting](../daemon.md#troubleshooting).
+If the status does not update, check the [Architecture](../platform/architecture.md) page for details on daemon connectivity, or contact support on [Discord](https://discord.gg/fg6JS7Xz).
 
 ---
 

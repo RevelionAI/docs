@@ -18,7 +18,7 @@ Before a scan starts, you define the rules of engagement:
 !!! warning
     Always ensure you have written authorisation to test the target. Revelion is a real exploitation platform — not a passive scanner. It will attempt to exploit vulnerabilities it finds.
 
-Scans can be run immediately or scheduled on a recurring basis. See [Scheduled Scans](../getting-started/scheduled-scans.md) for setup.
+Scans can be run immediately or scheduled on a recurring basis. See [Scheduled Scans](../guides/scheduled-scans.md) for setup.
 
 ---
 

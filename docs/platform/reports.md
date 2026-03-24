@@ -51,7 +51,7 @@ PDF reports support custom branding for client delivery.
 
 | Plan | Branding Capabilities |
 |---|---|
-| Pro | Custom logo, primary and accent colours |
+| Pro | Custom logo, text and heading colours |
 | MSP | Full white-label — logo, colours, report header, custom footer, per-client overrides |
 
 !!! tip
@@ -73,7 +73,7 @@ Findings can be mapped to compliance framework requirements. Revelion supports:
 - NIST CSF
 - CIS Controls
 - OWASP Top 10
-- PTES
+- Cyber Essentials
 
 Compliance mapping is included in both the PDF report and the JSON export, making it straightforward to feed findings into a GRC tool or audit evidence package.
 
@@ -94,4 +94,8 @@ Compliance mapping is included in both the PDF report and the JSON export, makin
 
 ## Report Retention
 
-Reports are stored in Supabase Storage with row-level security. Only members of your organisation can access your reports. Reports are retained indefinitely — there is no automatic deletion.
+Reports are stored in Supabase Storage with row-level security. Only members of your organisation can access your reports.
+
+- **Free plan**: 30 days retention
+- **Pro and MSP plans**: 1 year retention
+- **Enterprise**: configurable

@@ -24,7 +24,7 @@ Set up automated scan schedules per client. Deliver continuous security testing 
 
 The MSP plan is **£299/month** and includes:
 
-- 300,000 credits per month
+- 400,000 credits per month
 - 25 client slots
 - Full white-label report branding
 - Client portal for every client
@@ -32,7 +32,7 @@ The MSP plan is **£299/month** and includes:
 - Priority support
 
 !!! info "Top-up credits"
-    MSP customers receive a **33% bonus** on all credit top-ups. Top-ups start from £10 for 10,000 credits.
+    MSP customers receive a **33.3% bonus** on all credit top-ups. Top-ups start from £10 for 10,000 credits.
 
 ## Getting started
 

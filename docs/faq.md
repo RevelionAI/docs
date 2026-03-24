@@ -39,7 +39,7 @@ Duration depends on the target's complexity and attack surface.
 
 ## What tools does Revelion use?
 
-Industry-standard pentesting tools including Nmap, Nuclei, SQLMap, Feroxbuster, Playwright, Subfinder, httpx, and ffuf — all running in an isolated Docker sandbox on your machine.
+Industry-standard pentesting tools including Nmap, Nuclei, SQLMap, Feroxbuster, Playwright, Subfinder, httpx, ffuf, Caido proxy, jwt_tool, Responder, mitm6, and ligolo-ng — all running in an isolated Docker sandbox on your machine.
 
 ## Can I control what the AI does?
 

@@ -71,5 +71,5 @@ Revelion acknowledges the directive and adjusts its plan. Directives are logged 
 ## Related
 
 - [Scope Configuration](scope-configuration.md)
-- [Running a Mission](../quickstart/first-mission.md)
+- [Running a Mission](../getting-started/first-mission.md)
 - [Scheduled Scans](scheduled-scans.md)
