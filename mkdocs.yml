@@ -69,6 +69,17 @@ nav:
     - Scheduled Scans: guides/scheduled-scans.md
     - Compliance Frameworks: guides/compliance-frameworks.md
     - Report Branding: guides/report-branding.md
+  - API:
+    - Overview: api/index.md
+    - Authentication: api/authentication.md
+    - Scans: api/scans.md
+    - Findings: api/findings.md
+    - Assets: api/assets.md
+    - Reports: api/reports.md
+    - Credit Usage: api/usage.md
+    - Webhooks: api/webhooks.md
+    - Errors: api/errors.md
+    - Rate Limits: api/rate-limits.md
   - For MSPs:
     - Overview: for-msps/index.md
     - Client Management: for-msps/client-management.md
