@@ -2047,7 +2047,8 @@
 
 
 <h1 id="rate-limits">Rate Limits<a class="headerlink" href="#rate-limits" title="Permanent link">&para;</a></h1>
-<p>API requests are rate-limited per API key, with limits based on your plan.</p>
+<p>API access requires a <strong>Pro</strong> or <strong>MSP</strong> subscription. Free tier accounts cannot create API keys or access <code>/v1/</code> endpoints.</p>
+<p>Requests are rate-limited per API key, with limits based on your plan.</p>
 <h2 id="limits-by-plan">Limits by Plan<a class="headerlink" href="#limits-by-plan" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2060,31 +2061,16 @@
 </thead>
 <tbody>
 <tr>
-<td>Free</td>
-<td>60/min</td>
-<td>10/min</td>
-<td>5/min</td>
-</tr>
-<tr>
-<td>Pro</td>
-<td>300/min</td>
-<td>60/min</td>
-<td>20/min</td>
-</tr>
-<tr>
-<td>MSP</td>
-<td>600/min</td>
-<td>120/min</td>
-<td>40/min</td>
-</tr>
-<tr>
-<td>Enterprise</td>
-<td>1,000/min</td>
-<td>300/min</td>
-<td>100/min</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p>| Pro | 300/min | 60/min | 20/min |
+| MSP | 600/min | 120/min | 40/min |
+| Enterprise | 1,000/min | 300/min | 100/min |</p>
 <p><strong>Tier classification:</strong></p>
 <ul>
 <li><strong>Read:</strong> All <code>GET</code> requests</li>

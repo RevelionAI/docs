@@ -6,7 +6,7 @@ Revelion is priced around compute consumed, not headcount or engagement count. Y
 
 | | Free | Pro (£99/mo) | MSP (£299/mo) | Enterprise |
 |---|---|---|---|---|
-| Starting credits | 5,000 | 125,000/mo | 400,000/mo | Unlimited |
+| Starting credits | 10,000 | 125,000/mo | 400,000/mo | Unlimited |
 | Top-up bonus | — | 25% | 33.3% | Custom |
 | Web & network testing | ✓ | ✓ | ✓ | ✓ |
 | VPN tunnelling | ✓ | ✓ | ✓ | ✓ |
@@ -21,13 +21,14 @@ Revelion is priced around compute consumed, not headcount or engagement count. Y
 | Client portal | — | — | ✓ | ✓ |
 | Report retention | 30 days | 1 year | 1 year | Custom |
 | Support | Standard | Priority | Priority | Dedicated |
+| API access | — | ✓ | ✓ | ✓ |
 
 ## Credit system
 
 Credits are the unit of AI compute in Revelion. Every scan consumes credits based on the models invoked, the number of agents spawned, and the depth of testing performed.
 
 - **10,000 credits = £10**
-- A typical web scan costs 30,000–50,000 credits (£3–£5)
+- A typical web scan costs 30,000–50,000 credits (£30–£50)
 - A deep network scan with multiple agents may use up to 150,000 credits
 - Credits never expire
 - You only pay for what you use — unused credits roll over

@@ -2,6 +2,9 @@
 
 Revelion provides a RESTful API for programmatic access to scanning, findings, assets, and reports. Use it to integrate automated pentesting into your CI/CD pipelines, build custom dashboards, or connect with third-party security tools.
 
+!!! note "Plan Requirement"
+    API access requires a **Pro** or **MSP** subscription. [Upgrade your plan](https://app.revelion.ai/settings?section=membership) to get started.
+
 ## Base URL
 
 ```

@@ -1,12 +1,14 @@
 # Rate Limits
 
-API requests are rate-limited per API key, with limits based on your plan.
+API access requires a **Pro** or **MSP** subscription. Free tier accounts cannot create API keys or access `/v1/` endpoints.
+
+Requests are rate-limited per API key, with limits based on your plan.
 
 ## Limits by Plan
 
 | Plan | Read | Write | Critical |
 |------|------|-------|----------|
-| Free | 60/min | 10/min | 5/min |
+
 | Pro | 300/min | 60/min | 20/min |
 | MSP | 600/min | 120/min | 40/min |
 | Enterprise | 1,000/min | 300/min | 100/min |
