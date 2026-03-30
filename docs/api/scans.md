@@ -15,7 +15,16 @@ Requires `write` scope. Returns `202 Accepted` — the scan runs asynchronously.
   "scan_mode": "normal",
   "scan_type": "web",
   "instructions": "Focus on authentication flows",
-  "compliance_standard": "soc2"
+  "compliance_standard": "soc2",
+  "credentials": [
+    {
+      "credential_type": "username_password",
+      "label": "Admin",
+      "username": "admin@example.com",
+      "password": "testpass123",
+      "login_url": "/login"
+    }
+  ]
 }
 ```
 
@@ -28,18 +37,83 @@ Requires `write` scope. Returns `202 Accepted` — the scan runs asynchronously.
 | `instructions` | string | No | Custom instructions for the AI agent (Pro+) |
 | `compliance_standard` | string | No | `soc2`, `iso27001`, `pci_dss` (Pro+) |
 | `client_id` | string | No | Associate with an MSP client (MSP plan) |
+| `credentials` | array | No | Up to 10 credential sets for authenticated scanning. See below. |
 
-### Idempotency
+### Authenticated Scanning
 
-Pass an `Idempotency-Key` header to prevent duplicate scans on retry:
+Provide credentials to unlock authenticated testing — IDOR, privilege escalation, broken access control, and session management vulnerabilities that are invisible to unauthenticated scans.
 
-```bash
-curl -X POST /v1/scans \
-  -H "Idempotency-Key: my-unique-key-123" \
-  ...
+Credentials are encrypted at rest and automatically deleted after the scan completes. They are never returned by any API endpoint.
+
+Each credential object requires a `credential_type` and the relevant fields:
+
+**Username / Password**
+
+```json
+{
+  "credential_type": "username_password",
+  "label": "Admin",
+  "username": "admin@example.com",
+  "password": "testpass123",
+  "login_url": "/login"
+}
 ```
 
-If the same key is sent within 24 hours, the original scan is returned with an `Idempotent-Replayed: true` header.
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `username` | string | Yes | Login username or email |
+| `password` | string | Yes | Login password |
+| `login_url` | string | No | Login page path (helps the agent find the login form) |
+| `label` | string | No | Role label (e.g. "Admin", "Regular User") |
+
+**Bearer Token**
+
+```json
+{
+  "credential_type": "bearer_token",
+  "label": "API Token",
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "header_name": "Authorization"
+}
+```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `token` | string | Yes | The token value |
+| `header_name` | string | No | Header name. Default: `Authorization` |
+
+**Cookie**
+
+```json
+{
+  "credential_type": "cookie",
+  "label": "Session",
+  "cookie_string": "session=abc123; csrf_token=xyz789"
+}
+```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `cookie_string` | string | Yes | Cookie string to inject |
+
+**Custom Headers**
+
+```json
+{
+  "credential_type": "custom_headers",
+  "label": "API Key Headers",
+  "headers": [
+    {"name": "X-API-Key", "value": "sk_live_abc123"},
+    {"name": "X-Tenant-ID", "value": "org_456"}
+  ]
+}
+```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `headers` | array | Yes | Array of `{name, value}` header objects |
+
+**Multi-role testing:** Provide multiple credential sets with different privilege levels (e.g. Admin + Regular User). The agent will test each role separately and compare access to detect privilege escalation and broken access control.
 
 ## List Scans
 
