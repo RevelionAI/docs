@@ -1297,10 +1297,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#idempotency" class="md-nav__link">
+  <a href="#authenticated-scanning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Idempotency
+        Authenticated Scanning
       
     </span>
   </a>
@@ -2056,10 +2056,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#idempotency" class="md-nav__link">
+  <a href="#authenticated-scanning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Idempotency
+        Authenticated Scanning
       
     </span>
   </a>
@@ -2157,8 +2157,17 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;scan_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;scan_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;instructions&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Focus on authentication flows&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;compliance_standard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soc2&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;compliance_standard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soc2&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&quot;credential_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;username_password&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@example.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpass123&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;login_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/login&quot;</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">}</span>
 </code></pre></div>
 <table>
 <thead>
@@ -2212,15 +2221,149 @@
 <td>No</td>
 <td>Associate with an MSP client (MSP plan)</td>
 </tr>
+<tr>
+<td><code>credentials</code></td>
+<td>array</td>
+<td>No</td>
+<td>Up to 10 credential sets for authenticated scanning. See below.</td>
+</tr>
 </tbody>
 </table>
-<h3 id="idempotency">Idempotency<a class="headerlink" href="#idempotency" title="Permanent link">&para;</a></h3>
-<p>Pass an <code>Idempotency-Key</code> header to prevent duplicate scans on retry:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>/v1/scans<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Idempotency-Key: my-unique-key-123&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>...
+<h3 id="authenticated-scanning">Authenticated Scanning<a class="headerlink" href="#authenticated-scanning" title="Permanent link">&para;</a></h3>
+<p>Provide credentials to unlock authenticated testing — IDOR, privilege escalation, broken access control, and session management vulnerabilities that are invisible to unauthenticated scans.</p>
+<p>Credentials are encrypted at rest and automatically deleted after the scan completes. They are never returned by any API endpoint.</p>
+<p>Each credential object requires a <code>credential_type</code> and the relevant fields:</p>
+<p><strong>Username / Password</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;credential_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;username_password&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@example.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpass123&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;login_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/login&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
 </code></pre></div>
-<p>If the same key is sent within 24 hours, the original scan is returned with an <code>Idempotent-Replayed: true</code> header.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>username</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Login username or email</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Login password</td>
+</tr>
+<tr>
+<td><code>login_url</code></td>
+<td>string</td>
+<td>No</td>
+<td>Login page path (helps the agent find the login form)</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>string</td>
+<td>No</td>
+<td>Role label (e.g. "Admin", "Regular User")</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bearer Token</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;credential_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bearer_token&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;API Token&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOiJIUzI1NiIs...&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;header_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Authorization&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>The token value</td>
+</tr>
+<tr>
+<td><code>header_name</code></td>
+<td>string</td>
+<td>No</td>
+<td>Header name. Default: <code>Authorization</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cookie</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;credential_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cookie&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Session&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;cookie_string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;session=abc123; csrf_token=xyz789&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cookie_string</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Cookie string to inject</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Custom Headers</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;credential_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;custom_headers&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;API Key Headers&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;X-API-Key&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk_live_abc123&quot;</span><span class="p">},</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;X-Tenant-ID&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;org_456&quot;</span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>headers</code></td>
+<td>array</td>
+<td>Yes</td>
+<td>Array of <code>{name, value}</code> header objects</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Multi-role testing:</strong> Provide multiple credential sets with different privilege levels (e.g. Admin + Regular User). The agent will test each role separately and compare access to detect privilege escalation and broken access control.</p>
 <h2 id="list-scans">List Scans<a class="headerlink" href="#list-scans" title="Permanent link">&para;</a></h2>
 <p><code>GET /v1/scans?limit=20&amp;offset=0&amp;status=completed</code></p>
 <p>Requires <code>read</code> scope.</p>
