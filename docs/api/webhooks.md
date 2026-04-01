@@ -7,14 +7,7 @@ Receive real-time notifications when scans complete, findings are discovered, or
 ### 1. Create a Webhook
 
 ```bash
-curl -X POST https://api.revelion.ai/api/webhooks \
-  -H "Authorization: Bearer YOUR_JWT" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "url": "https://your-server.com/webhooks/revelion",
-    "events": ["scan.completed", "finding.created"],
-    "description": "Production webhook"
-  }'
+curl -X POST https://api.revelion.ai/api/webhooks -H "Authorization: Bearer YOUR_JWT" -H "Content-Type: application/json" -d '{"url":"https://your-server.com/webhooks/revelion","events":["scan.completed","finding.created"],"description":"Production webhook"}'
 ```
 
 !!! warning "One-Time Secret"
@@ -132,6 +125,5 @@ If a webhook endpoint fails 10 consecutive deliveries, it is automatically disab
 Send a test event to verify your endpoint:
 
 ```bash
-curl -X POST https://api.revelion.ai/api/webhooks/{id}/test \
-  -H "Authorization: Bearer YOUR_JWT"
+curl -X POST https://api.revelion.ai/api/webhooks/{id}/test -H "Authorization: Bearer YOUR_JWT"
 ```

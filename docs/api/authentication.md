@@ -5,8 +5,7 @@
 All API requests require a Bearer token. API keys are prefixed with `rvn_live_` and scoped to your organization.
 
 ```bash
-curl https://api.revelion.ai/v1/scans \
-  -H "Authorization: Bearer rvn_live_a3f2bc1..."
+curl https://api.revelion.ai/v1/scans -H "Authorization: Bearer rvn_live_a3f2bc1..."
 ```
 
 ### Creating Keys
@@ -14,14 +13,7 @@ curl https://api.revelion.ai/v1/scans \
 Create API keys in the Revelion dashboard under **Settings > API Keys**, or via the management API:
 
 ```bash
-curl -X POST https://api.revelion.ai/api/keys \
-  -H "Authorization: Bearer YOUR_SUPABASE_JWT" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "CI/CD Pipeline",
-    "scopes": ["read", "write"],
-    "expires_at": "2027-03-29T00:00:00Z"
-  }'
+curl -X POST https://api.revelion.ai/api/keys -H "Authorization: Bearer YOUR_SUPABASE_JWT" -H "Content-Type: application/json" -d '{"name":"CI/CD Pipeline","scopes":["read","write"],"expires_at":"2027-03-29T00:00:00Z"}'
 ```
 
 !!! warning "One-Time Display"
@@ -40,8 +32,7 @@ curl -X POST https://api.revelion.ai/api/keys \
 Rotate a key atomically — the old key is revoked and a new one created in a single transaction:
 
 ```bash
-curl -X POST https://api.revelion.ai/api/keys/{key_id}/rotate \
-  -H "Authorization: Bearer YOUR_SUPABASE_JWT"
+curl -X POST https://api.revelion.ai/api/keys/{key_id}/rotate -H "Authorization: Bearer YOUR_SUPABASE_JWT"
 ```
 
 ### IP Allowlisting

@@ -138,11 +138,7 @@ All list endpoints return paginated responses:
 
     ```bash
     # Create scan
-    SCAN_ID=$(curl -s -X POST "$BASE/scans" \
-      -H "Authorization: Bearer $API_KEY" \
-      -H "Content-Type: application/json" \
-      -d '{"name":"Scan","target":{"type":"url","url":"https://example.com"},"scan_mode":"quick"}' \
-      | jq -r '.id')
+    SCAN_ID=$(curl -s -X POST "$BASE/scans" -H "Authorization: Bearer $API_KEY" -H "Content-Type: application/json" -d '{"name":"Scan","target":{"type":"url","url":"https://example.com"},"scan_mode":"quick"}' | jq -r '.id')
 
     # Wait for completion
     while [ "$(curl -s "$BASE/scans/$SCAN_ID" -H "Authorization: Bearer $API_KEY" | jq -r '.status')" != "completed" ]; do
