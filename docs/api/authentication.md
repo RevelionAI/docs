@@ -12,9 +12,17 @@ curl https://api.revelion.ai/v1/scans -H "Authorization: Bearer rvn_live_a3f2bc1
 
 Create API keys in the Revelion dashboard under **Settings > API Keys**, or via the management API:
 
-```bash
-curl -X POST https://api.revelion.ai/api/keys -H "Authorization: Bearer YOUR_SUPABASE_JWT" -H "Content-Type: application/json" -d '{"name":"CI/CD Pipeline","scopes":["read","write"],"expires_at":"2027-03-29T00:00:00Z"}'
-```
+=== "macOS / Linux"
+
+    ```bash
+    curl -X POST https://api.revelion.ai/api/keys -H "Authorization: Bearer YOUR_SUPABASE_JWT" -H "Content-Type: application/json" -d '{"name":"CI/CD Pipeline","scopes":["read","write"],"expires_at":"2027-03-29T00:00:00Z"}'
+    ```
+
+=== "Windows (cmd / PowerShell)"
+
+    ```bash
+    curl -X POST https://api.revelion.ai/api/keys -H "Authorization: Bearer YOUR_SUPABASE_JWT" -H "Content-Type: application/json" -d "{\"name\":\"CI/CD Pipeline\",\"scopes\":[\"read\",\"write\"],\"expires_at\":\"2027-03-29T00:00:00Z\"}"
+    ```
 
 !!! warning "One-Time Display"
     The full API key is shown **only once** when created. Store it securely — it cannot be retrieved again.

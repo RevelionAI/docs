@@ -6,9 +6,17 @@ Receive real-time notifications when scans complete, findings are discovered, or
 
 ### 1. Create a Webhook
 
-```bash
-curl -X POST https://api.revelion.ai/api/webhooks -H "Authorization: Bearer YOUR_JWT" -H "Content-Type: application/json" -d '{"url":"https://your-server.com/webhooks/revelion","events":["scan.completed","finding.created"],"description":"Production webhook"}'
-```
+=== "macOS / Linux"
+
+    ```bash
+    curl -X POST https://api.revelion.ai/api/webhooks -H "Authorization: Bearer YOUR_JWT" -H "Content-Type: application/json" -d '{"url":"https://your-server.com/webhooks/revelion","events":["scan.completed","finding.created"],"description":"Production webhook"}'
+    ```
+
+=== "Windows (cmd / PowerShell)"
+
+    ```bash
+    curl -X POST https://api.revelion.ai/api/webhooks -H "Authorization: Bearer YOUR_JWT" -H "Content-Type: application/json" -d "{\"url\":\"https://your-server.com/webhooks/revelion\",\"events\":[\"scan.completed\",\"finding.created\"],\"description\":\"Production webhook\"}"
+    ```
 
 !!! warning "One-Time Secret"
     The signing secret (`whsec_rv_...`) is shown only once. Store it securely.

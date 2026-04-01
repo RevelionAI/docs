@@ -21,9 +21,17 @@ In the Revelion dashboard, go to **Settings > API Keys** and create a new key wi
 
 ### 2. Start a Scan
 
-```bash
-curl -X POST https://api.revelion.ai/v1/scans -H "Authorization: Bearer rvn_live_your_key_here" -H "Content-Type: application/json" -d '{"name":"Example Scan","target":{"type":"url","url":"https://example.com"},"scan_mode":"quick"}'
-```
+=== "macOS / Linux"
+
+    ```bash
+    curl -X POST https://api.revelion.ai/v1/scans -H "Authorization: Bearer rvn_live_your_key_here" -H "Content-Type: application/json" -d '{"name":"Example Scan","target":{"type":"url","url":"https://example.com"},"scan_mode":"quick"}'
+    ```
+
+=== "Windows (cmd / PowerShell)"
+
+    ```bash
+    curl -X POST https://api.revelion.ai/v1/scans -H "Authorization: Bearer rvn_live_your_key_here" -H "Content-Type: application/json" -d "{\"name\":\"Example Scan\",\"target\":{\"type\":\"url\",\"url\":\"https://example.com\"},\"scan_mode\":\"quick\"}"
+    ```
 
 Response:
 ```json
