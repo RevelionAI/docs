@@ -22,14 +22,7 @@ In the Revelion dashboard, go to **Settings > API Keys** and create a new key wi
 ### 2. Start a Scan
 
 ```bash
-curl -X POST https://api.revelion.ai/v1/scans \
-  -H "Authorization: Bearer rvn_live_your_key_here" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Example Scan",
-    "target": {"type": "url", "url": "https://example.com"},
-    "scan_mode": "quick"
-  }'
+curl -X POST https://api.revelion.ai/v1/scans -H "Authorization: Bearer rvn_live_your_key_here" -H "Content-Type: application/json" -d '{"name":"Example Scan","target":{"type":"url","url":"https://example.com"},"scan_mode":"quick"}'
 ```
 
 Response:
@@ -47,15 +40,13 @@ Response:
 ### 3. Check Status
 
 ```bash
-curl https://api.revelion.ai/v1/scans/550e8400-e29b-41d4-a716-446655440000 \
-  -H "Authorization: Bearer rvn_live_your_key_here"
+curl https://api.revelion.ai/v1/scans/550e8400-e29b-41d4-a716-446655440000 -H "Authorization: Bearer rvn_live_your_key_here"
 ```
 
 ### 4. Get Findings
 
 ```bash
-curl https://api.revelion.ai/v1/findings/scan/550e8400-e29b-41d4-a716-446655440000 \
-  -H "Authorization: Bearer rvn_live_your_key_here"
+curl https://api.revelion.ai/v1/findings/scan/550e8400-e29b-41d4-a716-446655440000 -H "Authorization: Bearer rvn_live_your_key_here"
 ```
 
 ## Response Format
